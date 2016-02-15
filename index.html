@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Service Workers</title>
+  </head>
+  <body>
+    <h1>Service Workers</h1>
+    <h2>Examples:</h2>
+    <ol>
+      <li><a href="/example-1/">Events</a></li>
+      <li><a href="/example-2/">Fetch</a></li>
+      <li><a href="/example-3/">Prefetch &amp; Caching</a></li>
+      <li><a href="/example-4/">Offline Page</a></li>
+      <li><a href="/example-5/">Post Message</a></li>
+    </ol>
+    <p>
+      <button onclick="clearCaches()">Clear Caches</button>
+    </p>
+    <script>
+      function clearCaches() {
+        caches.keys().then(names => {
+          names.forEach(name => {
+            console.log(`Deleteing cache: ${name}`);
+            caches.delete(name)
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

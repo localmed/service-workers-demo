@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Example 1</title>
+  </head>
+  <body>
+    <p><a href="/">&larr; Service Workers</a></p>
+    <h1>Example 1 - Events</h1>
+    <p><img src="http://placehold.it/350x150"></p>
+    <script>
+      navigator.serviceWorker.register('service-worker.js', {scope: '/example-1/'})
+        .then(function(registration) {
+          console.log('registered!', registration)
+        });
+    </script>
+  </body>
+</html>

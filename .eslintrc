@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "brace-style": [2, "stroustrup"],
+    "indent": [2, 2],
+    "jsx-quotes": 1,
+    "no-underscore-dangle": 0,
+    "no-unused-expressions": 0,
+    "no-unused-vars": 1,
+    "quotes": [1, "single"],
+    "semi": [1, "always"]
+  },
+  "env":{
+    "es6": true
+  },
+  "parser": "babel-eslint"
+}

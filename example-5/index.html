@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Example 5</title>
+  </head>
+  <body>
+    <p><a href="/">&larr; Service Workers</a></p>
+    <h1>Example 5 - Post Message</h1>
+    <form onsubmit="return submitForm()">
+      <p>
+        <label for="url">URL:</label> <br>
+        <input type="text" id="url">
+      </p>
+      <p>
+        <input type="submit" value="Add to Cache">
+      </p>
+    </form>
+    <pre id="log"></pre>
+    <script>
+      navigator.serviceWorker.register('service-worker.js', {scope: '/example-5/'});
+
+      navigator.serviceWorker.addEventListener('message', function(event) {
+        var log = document.getElementById('log');
+        log.innerHTML += '\n' + JSON.stringify(event.data);
+      });
+
+      function submitForm(event) {
+        var url = document.getElementById('url').value;
+        navigator.serviceWorker.controller.postMessage({url: url});
+        return false;
+      }
+    </script>
+  </body>
+</html>
