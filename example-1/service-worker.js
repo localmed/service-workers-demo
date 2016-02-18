@@ -1,6 +1,4 @@
-console.log(this);
 console.log(self);
-console.log(typeof window);
 
 self.addEventListener('install', event => {
   console.log('installed!', event);

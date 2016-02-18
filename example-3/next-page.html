@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <title>Example 3</title>
+    <link rel="stylesheet" href="site.css">
   </head>
   <body>
-    <p><a href="/">&larr; Service Workers</a></p>
+    <p><a href="/example-3/">&larr; Example 3</a></p>
     <h1>Example 3 - Prefetch &amp; Caching</h1>
-    <p><a href="/example-3/next-page.html">Next Page</a></p>
+    <div id="app"></div>
+    <script src="site.js"></script>
     <script>
       navigator.serviceWorker.register('service-worker.js', {scope: '/example-3/'});
     </script>
